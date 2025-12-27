@@ -1,0 +1,30 @@
+// ...existing code...
+private String hexToDTC(String hex) {
+    if (hex == null || hex.length() != 4) return "Invalid";
+    
+    char first = hex.charAt(0);
+    String prefix;
+    switch (first) {
+        case '0':
+        case '1':
+            prefix = "P";
+            break;
+        case '2':
+        case '3':
+            prefix = "C";
+            break;
+        case '4':
+        case '5':
+            prefix = "B";
+            break;
+        case '6':
+        case '7':
+            prefix = "U";
+            break;
+        default:
+            prefix = "P";
+            break;
+    }
+    return prefix + hex.substring(1);
+}
+// ...existing code...
